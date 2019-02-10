@@ -1,0 +1,5 @@
+.idea/
+venv/
+server_stuff/__init__.py
+server_stuff/__pycache__/
+server_stuff/output.json
