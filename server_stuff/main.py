@@ -1,4 +1,4 @@
-from flask import Flask,jsonify
+from flask import Flask, jsonify, render_template
 import json
 
 app = Flask(__name__)
@@ -12,9 +12,14 @@ def write_json(data):
 
 
 @app.route('/')
-@app.route('/getquote', methods=['GET', 'POST'])
+def index():
+    return render_template('index.html')
+
+
+@app.route('/getquote', methods=['GET'])
 def getquote():
     write_json(json_dict)
+
     return jsonify(json_dict)
 
 
